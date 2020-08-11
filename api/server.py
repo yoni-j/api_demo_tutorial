@@ -29,12 +29,13 @@ def data_view():
     }
 
 
-@app.route("/world_clock/<string:timezone>")
-def world_clock_view(timezone: str):
+@app.route("/world_clock/<a_timezone>")
+def world_clock_view(a_timezone: str):
     base_uri = "http://worldtimeapi.org/api/timezone/"
-    res = requests.get(urljoin(base_uri, timezone))
-    print(res.json())
-    return f"in {timezone} it's currently {res.json()}"
+    normalized_timezone = "/".join(a_timezone.split('.'))
+    res = requests.get(urljoin(base_uri, normalized_timezone))
+    current_time = res.json().get('datetime')
+    return f"in {a_timezone} it's currently {current_time}"
 
 
 if __name__ == "__main__":
