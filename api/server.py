@@ -18,5 +18,13 @@ def greet_view(name: str):
     return f"Hello {name}"
 
 
+@app.route("/data")
+def data_view():
+    return {
+        "corona_dead": [{"date": "11/06/2020", "count": 10},
+                        {"date": "12/06/2020", "count": 11}]
+    }
+
+
 if __name__ == "__main__":
     app.run(port=5000, host="127.0.0.1")
