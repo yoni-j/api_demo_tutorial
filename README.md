@@ -17,3 +17,13 @@ python3 -m venv api_demo_venv
 ```bash
 pip install -r requirements.txt
 ```
+## Following the tutorial
+
+Every step is tagged from v1 to v6
+
+## Follow at home
+
+* Add a db
+* Different http methods
+* Use jinja templates
+* Read about auth
