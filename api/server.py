@@ -35,7 +35,7 @@ def world_clock_view(a_timezone: str):
     normalized_timezone = "/".join(a_timezone.split('.'))
     res = requests.get(urljoin(base_uri, normalized_timezone))
     current_time = res.json().get('datetime')
-    return f"in {a_timezone} it's currently {current_time}"
+    return f"in {a_timezone} it is currently {current_time}"
 
 
 if __name__ == "__main__":
